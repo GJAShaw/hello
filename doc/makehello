@@ -1,0 +1,87 @@
+# ------------------------------------------------------------------------------
+# 1. Create project directory
+# ------------------------------------------------------------------------------
+
+export ARTIFACT_ID='hello'
+export GROUP_ID='com.avalokita'
+
+mvn archetype:generate \
+    -DgroupId=${GROUP_ID} \
+    -DartifactId=${ARTIFACT_ID} \
+    -DarchetypeArtifactId=maven-archetype-quickstart \
+    -DinteractiveMode=false
+
+cd ${ARTIFACT_ID}
+export PROJECT_DIR=$(pwd)
+
+
+# ------------------------------------------------------------------------------
+# 2. Create a README.md
+# ------------------------------------------------------------------------------
+
+cd ${PROJECT_DIR}
+echo "# ${ARTIFACT_ID}" > README.md
+
+
+# ------------------------------------------------------------------------------
+# 3. Create .gitignore
+#
+# Be ready with an example to paste in, e.g. the one from
+# https://github.com/github/gitignore/blob/master/Maven.gitignore
+# ------------------------------------------------------------------------------
+
+cd ${PROJECT_DIR}
+echo "/untracked/" > .gitignore
+echo "**/*.bak"   >> .gitignore
+gedit .gitignore &
+
+# Copypaste a Maven .gitignore into it, save it, close it.
+
+
+# ------------------------------------------------------------------------------
+# 4. Create a GitHub repository with no README, gitignore or LICENSE
+#
+# Omit README, .gitignore and LICENSE - just create the bare repository,
+# with the same name as the ARTIFACT_ID
+# ------------------------------------------------------------------------------
+
+# GitHub will display a page with copypastable commands; ignore them, for now.
+# We'll adapt them later.
+
+# Copypaste the repo's clone url into the end of this command
+
+export GITHUB_URL=
+
+# ------------------------------------------------------------------------------
+# 5. Clone the project into the GitHub repository
+#
+# This example assumes you've set your default branch to 'master' in GitHub.
+# ------------------------------------------------------------------------------
+
+# ADAPT the instructions in GitHub
+
+cd ${PROJECT_DIR}
+git init
+git add --all
+git commit -m 'Commit Maven quickstart archetype'
+git remote add origin ${GITHUB_URL}
+git push -u origin master
+
+
+# ------------------------------------------------------------------------------
+# 6. Store this script to the repo
+# ------------------------------------------------------------------------------
+
+cd ${PROJECT_DIR}
+mkdir doc
+
+# put this script into the doc directory
+
+git add --all
+git commit -m 'Store howto script for creating project'
+git push
+
+
+# ------------------------------------------------------------------------------
+# ENDSCRIPT - from now on, follow the repo's Git log.
+# ------------------------------------------------------------------------------
