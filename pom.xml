@@ -8,6 +8,19 @@
   <name>hello</name>
   <url>http://maven.apache.org</url>
 
+  <distributionManagement>
+    <repository>
+      <id>cthulhu-releases</id>
+      <name>Cthulhu Releases</name>
+      <url>http://cthulhu:8081/repository/maven-releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>cthulhu-snapshots</id>
+      <name>Cthulhu Snapshots</name>
+      <url>http://cthulhu:8081/repository/maven-snapshots</url>
+      </snapshotRepository>
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
