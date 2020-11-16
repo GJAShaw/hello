@@ -3,7 +3,7 @@
   <groupId>com.avalokita</groupId>
   <artifactId>hello</artifactId>
   <packaging>jar</packaging>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <name>hello</name>
   <url>http://maven.apache.org</url>
 
@@ -11,7 +11,7 @@
     <connection>scm:git:git://github.com/GJAShaw/hello.git</connection>
     <developerConnection>scm:git:git@github.com:GJAShaw/hello.git</developerConnection>
     <url>https://github.com/GJAShaw/hello</url>
-    <tag>HEAD</tag>
+    <tag>hello-1.2</tag>
   </scm>
 
 
