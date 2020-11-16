@@ -1,16 +1,20 @@
 # hello
 
-A project to create an "enterprise ready" template Maven project, from a Maven quickstart archetype.
+A project to create an "enterprise ready" template Maven application, from a Maven quickstart archetype.
 
-*WORK IN PROGRESS* Not all the features below are implemented yet. Look at the branch names of the repository to find out which; if I've merged a feature branch into master, then I considered the feature fully implemented.
+*WORK IN PROGRESS*
 
-There is no implication that any Maven archetype is by nature unfit for enterprise use! However, the enterprise where **I** work requires a project to have certain features which aren't present in a Maven quickstart archetype, e.g.
+Not all the features below are implemented yet. Look at the branch names of the repository to find out which; if I've merged a feature branch into master, then I considered the feature fully implemented.
+
+## why?
+
+There is no implication that any Maven archetype is by nature unfit for enterprise use! However, the enterprise where I work requires an application to have certain features which aren't present in a Maven quickstart archetype, e.g.
 
 - Logging with a proper logger; use of System.out methods to print to terminal is forbidden.
 - Packaging the application as an executable jar
 - Source control by a centralised source repository manager.
 - Storage of components, including jars, in a centralised component repository manager.
-- Pipeline automation.
+- Pipeline automation; develop, build, test, release, deploy.
 - Test automation.
 - (more to follow as I remember them...)
 
