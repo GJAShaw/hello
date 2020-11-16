@@ -8,6 +8,14 @@
   <name>hello</name>
   <url>http://maven.apache.org</url>
 
+  <scm>
+    <connection>scm:git:git://github.com/GJAShaw/hello.git</connection>
+    <developerConnection>scm:git:git@github.com:GJAShaw/hello.git</developerConnection>
+    <url>https://github.com/GJAShaw/hello</url>
+    <tag>HEAD</tag>
+  </scm>
+
+
   <distributionManagement>
     <repository>
       <id>cthulhu-releases</id>
@@ -23,6 +31,11 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M1</version>
+      </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
