@@ -1,5 +1,6 @@
 package com.avalokita;
 
+import java.net.InetAddress;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +15,12 @@ public class App
     
     public static void main( String[] args )
     {
-        LOG.info( "Hello World!" );
+    	String hostName;
+    	try {
+    		hostName = InetAddress.getLocalHost().getHostName();
+    	} catch (Exception x) {
+    		hostName = "<unknown hostname>";
+    	}
+        LOG.info( "Hello World, from " + hostName);
     }
 }
