@@ -2,8 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build-Stash-Clean') {
+            agent {label 'jenkins-master'}
             steps {
+                sh 'uname -a'
                 echo 'Building...'
                 sh 'mvn clean package'
                 echo 'Stashing...'
@@ -12,11 +14,13 @@ pipeline {
                 sh 'mvn clean'
             }
         }
-        stage('Try-Unstash') {
+        stage('Unstash-Run') {
+            agent {label 'wombat-agent'}
             steps {
                 echo 'Unstashing...'
                 unstash 'binary'
-                sh 'find . -type f -name "*.jar"'
+                echo 'Running...'
+                sh 'java -jar target/*spring*.jar'
             }
         }
         stage('Test') {
