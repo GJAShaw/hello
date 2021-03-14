@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none // each stage must define its own
 
     stages {
         stage('Build-Stash-Clean') {
@@ -24,12 +24,14 @@ pipeline {
             }
         }
         stage('Test') {
+            agent any
             steps {
                 echo 'Testing..'
                 sh 'echo PWD = $(pwd)'
             }
         }
         stage('Deploy') {
+            agent any
             steps {
                 echo 'Deploying....'
                 sh 'echo PWD = $(pwd)'
