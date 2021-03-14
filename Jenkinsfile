@@ -24,14 +24,14 @@ pipeline {
             }
         }
         stage('Test') {
-            agent any
+            agent {label 'wombat-agent'}
             steps {
                 echo 'Testing..'
                 sh 'echo PWD = $(pwd)'
             }
         }
         stage('Deploy') {
-            agent any
+            agent {label 'wombat-agent'}
             steps {
                 echo 'Deploying....'
                 sh 'echo PWD = $(pwd)'
