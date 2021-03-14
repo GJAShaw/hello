@@ -17,7 +17,10 @@ pipeline {
         stage('Unstash-Run') {
             agent {label 'wombat-agent'}
             steps {
-                sh 'uname -a'
+                sh '''
+                    uname -a
+                    find . -type f -name "*spring*.jar" -delete
+                '''
                 echo 'Nothing up my sleeve:'
                 sh 'find . -type f -name "*spring*.jar" -ls'
                 echo 'Unstashing...'
