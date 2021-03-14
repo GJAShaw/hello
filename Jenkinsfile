@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh 'uname -a'
                 echo 'Nothing up my sleeve:'
-                sh 'find . -type f -name "*spring*.jar -ls'
+                sh 'find . -type f -name "*spring*.jar" -ls'
                 echo 'Unstashing...'
                 unstash 'binary'
                 echo 'Running...'
