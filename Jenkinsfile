@@ -14,7 +14,7 @@ pipeline {
         stage('Try-Unstash') {
             steps {
                 echo 'mvn clean, followed by unstash...'
-                sh '
+                sh '''
                     mvn clean
                     unstash 'binary'
                     find . -type f -name "*.jar"
