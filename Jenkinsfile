@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'mvn clean package'
-                echo 'Stashing...
+                echo 'Stashing...'
                 stash includes: 'target/*spring*.jar', name: 'binary'
                 echo 'Cleaning...'
                 sh 'mvn clean'
