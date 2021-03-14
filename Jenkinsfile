@@ -5,7 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'echo PWD = $(pwd)'
+                sh '''
+                    mvn clean package
+                    find target -type f -name *spring*.jar
+                '''
             }
         }
         stage('Test') {
